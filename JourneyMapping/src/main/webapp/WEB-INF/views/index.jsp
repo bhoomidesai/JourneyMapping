@@ -23,8 +23,8 @@
 		</div>
 		<div class="col-lg-6">
 			<!-- col Start -->
-			<h3 class="text-center">
-				<i class="fa fa-lock"></i>Login
+			<h3 class="text-leftr">
+				<i class="fa fa-lock"></i>Enter Student ID :
 			</h3>
 			<form action="/JourneyMapping/login" method="post">
 				<div class="form-group">

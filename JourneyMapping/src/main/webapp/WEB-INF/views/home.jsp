@@ -148,37 +148,37 @@ body {
   <div class="container left">
     <div class="content">
       <h3><fmt:formatDate value="${student.regDate}" pattern="dd-MM-yyyy" /></h3>
-      <p>Date of registration</p>
+      <p>Date of registration... Welcome to NIIT</p>
     </div>
   </div>
   <div class="container right">
     <div class="content">
-      <h3>2016</h3>
-      <p>Lorem  vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+      <h3><fmt:formatDate value="${student.lastAttend}" pattern="dd-MM-yyyy" /></h3>
+      <p>Last attended on.</p>
     </div>
   </div>
   <div class="container left">
     <div class="content">
       <h3>2015</h3>
-      <p>Lorem  vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+      <p>Current sem.</p>
     </div>
   </div>
   <div class="container right">
     <div class="content">
       <h3>2012</h3>
-      <p>Lorem  vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+      <p>batch startdate</p>
     </div>
   </div>
   <div class="container left">
     <div class="content">
-      <h3>2011</h3>
-      <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+      <h3><fmt:formatDate value="${student.SOLDate}" pattern="dd-MM-yyyy" /></h3>
+      <p>Service with NIIT expires on</p>
     </div>
   </div>
   <div class="container right">
     <div class="content">
       <h3>2007</h3>
-      <p>Lorem mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+      <p></p>
     </div>
   </div>
 </div>

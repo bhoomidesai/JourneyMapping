@@ -14,8 +14,8 @@ public class Student {
 	@Id
 	private String studentID;
 	@Column
-	private String  studentName, courseCode,studentStatus,totalSem,CurrentSem,lastAttend;
-	Date regDate,SOLDate;
+	private String  studentName, courseCode,studentStatus,totalSem,CurrentSem;
+	Date regDate,SOLDate,lastAttend;
 	public String getStudentID() {
 		return studentID;
 	}
@@ -52,10 +52,10 @@ public class Student {
 	public void setCurrentSem(String currentSem) {
 		CurrentSem = currentSem;
 	}
-	public String getLastAttend() {
+	public Date getLastAttend() {
 		return lastAttend;
 	}
-	public void setLastAttend(String lastAttend) {
+	public void setLastAttend(Date lastAttend) {
 		this.lastAttend = lastAttend;
 	}
 	public Date getRegDate() {
