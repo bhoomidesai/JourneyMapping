@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.niit.dao.BatchDAO;
 import com.niit.dao.StudentDAO;
+import com.niit.model.Batch;
 import com.niit.model.Student;
 
 
@@ -31,6 +33,7 @@ public class LoginController {
 		m.addAttribute("sid", attribute); 
 		ModelAndView mav = new ModelAndView("home") ;
 		student = (Student) studentDAO.searchStudents(attribute);
+		mav.addObject("batch", student.getBatchlist());
 		mav.addObject("student", student);
 		System.out.println("Name : "+attribute+student.getStudentName());
         return mav;

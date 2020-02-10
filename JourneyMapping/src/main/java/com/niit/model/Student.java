@@ -6,16 +6,33 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.OneToMany;
+import javax.persistence.CascadeType;
+import javax.persistence.FetchType;
+import java.util.List;
 
 @Entity
 @Table(name = "student")
 
 public class Student {
 	@Id
+	@Column
 	private String studentID;
 	@Column
 	private String  studentName, courseCode,studentStatus,totalSem,CurrentSem;
+	@Column
 	Date regDate,SOLDate,lastAttend;
+	
+	@OneToMany(mappedBy = "student", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Batch> batchlist;
+
+	
+	public List<Batch> getBatchlist() {
+		return batchlist;
+	}
+	public void setBatchlist(List<Batch> batchlist) {
+		this.batchlist = batchlist;
+	}
 	public String getStudentID() {
 		return studentID;
 	}
