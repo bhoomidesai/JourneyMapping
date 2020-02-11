@@ -21,7 +21,7 @@ public class Student {
 	@Column
 	private String  studentName, courseCode,studentStatus,totalSem,CurrentSem;
 	@Column
-	Date regDate,SOLDate,lastAttend;
+	Date regDate,SOLDate,lastAttend,certReqDate, certIssueDate, certRecvDate;
 	
 	@OneToMany(mappedBy = "student", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Batch> batchlist;
@@ -87,6 +87,23 @@ public class Student {
 	public void setSOLDate(Date sOLDate) {
 		SOLDate = sOLDate;
 	}
-	
+	public Date getCertReqDate() {
+		return certReqDate;
+	}
+	public void setCertReqDate(Date certReqDate) {
+		this.certReqDate = certReqDate;
+	}
+	public Date getCertIssueDate() {
+		return certIssueDate;
+	}
+	public void setCertIssueDate(Date certIssueDate) {
+		this.certIssueDate = certIssueDate;
+	}
+	public Date getCertRecvDate() {
+		return certRecvDate;
+	}
+	public void setCertRecvDate(Date certRecvDate) {
+		this.certRecvDate = certRecvDate;
+	}
 	
 }

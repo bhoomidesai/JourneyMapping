@@ -245,8 +245,7 @@
 								</div>
 								<div class="timeline-panel">
 									<div class="timeline-heading">
-										<h4 class="timeline-title">${batch.batchCode}-
-											${batch.courseCode}</h4>
+										<h4 class="timeline-title">${batch.batchCode} - ${batch.courseCode}</h4>
 										<p>
 											<small class="text-muted"><i
 												class="glyphicon glyphicon-time"></i>&nbsp<fmt:formatDate
@@ -338,17 +337,45 @@
 							</div>
 							<div class="timeline-panel">
 								<div class="timeline-heading">
-									<h4 class="timeline-title">Mussum ipsum cacilds 4</h4>
+									<h4 class="timeline-title">Certificate</h4>
 									<p>
 										<small class="text-muted"><i
-											class="glyphicon glyphicon-time"></i> 11 hours ago via
-											Twitter</small>
+											class="glyphicon glyphicon-time"></i> 
+									
+									<c:choose>
+										<c:when test="${not empty student.certReqDate}">
+										Requested on<b> <fmt:formatDate value="${student.certReqDate}" pattern="dd-MM-yyyy" /> </b>
+										</c:when> 
+										<c:otherwise><p>Certificate request pending!</p></c:otherwise>
+									</c:choose>
+										</small>
 									</p>
 								</div>
 								<div class="timeline-body">
-									<p>Mussum ipsum cacilds, vidis litro abertis. Consetis
-										adipiscings elitis. Pra lá , depois divoltis porris, paradis.
-										Paisis, filhis, espiritis santis.</p>
+									<p>
+										<c:choose>
+										<c:when test="${not empty student.certReqDate}">
+											<c:choose>
+												<c:when test="${(not empty student.certIssueDate) && (empty student.certRecvDate)}">
+													certificate has arrived at centre on<b> <fmt:formatDate value="${student.certIssueDate}" pattern="dd-MM-yyyy" /> </b>
+												</c:when>
+												<c:when test="${(empty student.certIssueDate) && (empty student.certRecvDate)}">
+													<c:set var="days" value="${student.certReqDate}" />
+													<c:set target="${days}" property="time" value="${days.time + 86400000 * 7}" />
+													<p>Your certificate is dispatched, will receive on <b><fmt:formatDate value="${days}" pattern="dd-MM-yyyy" /></b></p>
+												</c:when>
+											</c:choose>
+											
+											<c:choose>
+												<c:when test="${not empty student.certRecvDate}">
+													Certificate received on <b> <fmt:formatDate value="${student.certRecvDate }" pattern="dd-MM-yyyy" /> </b>
+												</c:when>
+												<c:otherwise><p>Please collect your certificate from centre or contact centre to get it couriered.</p></c:otherwise>
+											</c:choose>
+										</c:when> 
+										<c:otherwise><p>Certificate is not requested yet. please request for certificate.</p></c:otherwise>
+										</c:choose>
+									</p>
 								</div>
 							</div>
 						</li>
@@ -358,7 +385,7 @@
 							</div>
 							<div class="timeline-panel">
 								<div class="timeline-heading">
-									<h4 class="timeline-title">Mussum ipsum cacilds 5</h4>
+									<h4 class="timeline-title">Placement</h4>
 									<p>
 										<small class="text-muted"><i
 											class="glyphicon glyphicon-time"></i> 11 hours ago via
@@ -366,9 +393,7 @@
 									</p>
 								</div>
 								<div class="timeline-body">
-									<p>Mussum ipsum cacilds, vidis litro abertis. Consetis
-										adipiscings elitis. Pra lá , depois divoltis porris, paradis.
-										Paisis, filhis, espiritis santis.</p>
+									<p>PP down graded</p>
 								</div>
 							</div>
 						</li>
